@@ -44,28 +44,15 @@ cd chatApp
 flutter pub get
 ```
 
-### 4. Setup Environment Variables `.env`
+### 4. Configure Firebase (`firebase_options.dart`)
 
-For security reasons, Firebase API keys are **not** committed to version control. You must create a `.env` file in the root directory of the project.
+For security reasons, `lib/firebase_options.dart` (which contains your Firebase API keys and secrets) is **ignored in version control (`.gitignore`)** and will not be pushed to Git.
+You’ll need to generate this file locally by running the FlutterFire CLI:
 
-Create a `.env` file at `chatApp/.env` and add your Firebase credentials:
-
-```ini
-# Firebase Android Config
-FIREBASE_API_KEY_ANDROID=your_android_api_key
-FIREBASE_APP_ID_ANDROID=your_android_app_id
-
-# Firebase iOS Config
-FIREBASE_API_KEY_IOS=your_ios_api_key
-FIREBASE_APP_ID_IOS=your_ios_app_id
-FIREBASE_IOS_BUNDLE_ID=your_ios_bundle_id
-
-# General Firebase Config
-FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-FIREBASE_PROJECT_ID=your_project_id
-FIREBASE_STORAGE_BUCKET=your_storage_bucket_url
+```bash
+flutterfire configure
 ```
-*(You can find these values in your Firebase Console -> Project Settings)*
+*(Alternatively, obtain it from your team)*
 
 ### 5. Run the App
 
@@ -77,6 +64,6 @@ flutter run
 
 ## 🔒 Security Notes
 
-*   Ensure that your `.env` file is never pushed to the repository. (It is already included in `.gitignore`).
+*   Ensure that your `lib/firebase_options.dart` is never pushed to the repository (It is handled by `.gitignore`).
 *   Configure **Firebase Security Rules** (Firestore & Storage) to prevent unauthorized access in production.
 *   Consider enabling **Firebase App Check** to protect your backend resources from abuse.

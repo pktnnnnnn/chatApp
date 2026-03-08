@@ -79,3 +79,6 @@ config.prod.json
 functions/node_modules/
 functions/.env
 functions/.runtimeconfig.json
+
+# Ignore Firebase options with hardcoded keys
+lib/firebase_options.dart
