@@ -43,3 +43,39 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# ==============================================================================
+# SECURITY & SECRETS (Prevent pushing sensitive data)
+# ==============================================================================
+
+# Environment variables
+.env
+.env.*
+*.env
+
+# Keys and Certificates
+*.pem
+*.key
+*.cert
+*.p12
+*.cer
+*.jks
+*.keystore
+key.properties
+**/*.mobileprovision
+
+# Firebase / GCP Service Account Keys
+*serviceAccountKey.json
+*service-account-key.json
+firebase-debug.log
+firebase-debug.*.log
+
+# Personal configurations and secrets
+secrets.json
+config.dev.json
+config.prod.json
+
+# Node.js/Firebase Functions
+functions/node_modules/
+functions/.env
+functions/.runtimeconfig.json
